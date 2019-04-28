@@ -50,5 +50,57 @@ namespace Assignment
             return dmin;
         }
 
+        public static int MinDistanceBO(int[] A)
+        {
+            //  Input : Array A[0 ... n-1] of numbers
+            //  Output : Basic Operation takes for this algorithm
+            int dmin = int.MaxValue;
+            int basicOperations = 0;
+
+            for (int i = 0; i < A.Length; i++)
+            {
+                for (int j = 0; j < A.Length; j++)
+                {
+                    basicOperations++;
+                    if ((i != j) && (Math.Abs(A[i] - A[j]) < dmin))
+                    {
+                        Console.WriteLine("Execute");
+                        Console.WriteLine("i : ");
+                        Console.WriteLine(i);
+                        Console.WriteLine("j : ");
+                        Console.WriteLine(j);
+                        dmin = Math.Abs(A[i] - A[j]);
+                    }
+                }
+            }
+
+            return basicOperations;
+        }
+
+        public static int MinDistance2BO(int[] A)
+        {
+            //  Input : An Array A[0 ... n-1] of numbers
+            //  Output : Basic Operation takes for this algorithm
+
+            int dmin = int.MaxValue;
+            int basicOperations = 0;
+
+            for (int i = 0; i < A.Length - 1; i++)
+            {
+                for (int j = i + 1; j < A.Length; j++)
+                {
+                    basicOperations++;
+                    int temp = Math.Abs(A[i] - A[j]);
+
+                    if (temp < dmin)
+                    {
+                        dmin = temp;
+                    }
+                }
+            }
+
+            return basicOperations;
+        }
+
     }
 }
