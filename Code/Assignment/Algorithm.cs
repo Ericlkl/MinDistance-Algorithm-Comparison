@@ -15,11 +15,6 @@ namespace Assignment
                 {
                     if ((i != j) && ( Math.Abs(A[i] - A[j]) < dmin))
                     {
-                        Console.WriteLine("Execute");
-                        Console.WriteLine("i : ");
-                        Console.WriteLine(i);
-                        Console.WriteLine("j : ");
-                        Console.WriteLine(j);
                         dmin = Math.Abs(A[i] - A[j]);
                     }
                 }
@@ -64,11 +59,6 @@ namespace Assignment
                     basicOperations++;
                     if ((i != j) && (Math.Abs(A[i] - A[j]) < dmin))
                     {
-                        Console.WriteLine("Execute");
-                        Console.WriteLine("i : ");
-                        Console.WriteLine(i);
-                        Console.WriteLine("j : ");
-                        Console.WriteLine(j);
                         dmin = Math.Abs(A[i] - A[j]);
                     }
                 }
@@ -81,9 +71,8 @@ namespace Assignment
         {
             //  Input : An Array A[0 ... n-1] of numbers
             //  Output : Basic Operation takes for this algorithm
-
-            int dmin = int.MaxValue;
             int basicOperations = 0;
+            int dmin = int.MaxValue;
 
             for (int i = 0; i < A.Length - 1; i++)
             {
@@ -92,6 +81,7 @@ namespace Assignment
                     basicOperations++;
                     int temp = Math.Abs(A[i] - A[j]);
 
+                    basicOperations++;
                     if (temp < dmin)
                     {
                         dmin = temp;

@@ -17,13 +17,7 @@ namespace Assignment
             int[] test8 = new int[] { 65535, 65535, 65535, 65535, 65535, 7 ,4 ,8 };
             //Console.WriteLine( Math.Abs( test1[0] - test1[2] ));
             Console.WriteLine(Algorithm.MinDistance2(test1));
-            //Console.WriteLine(Algorithm.MinDistance(test2));
-            //Console.WriteLine(Algorithm.MinDistance(test3));
-            //Console.WriteLine(Algorithm.MinDistance(test4));
-            //Console.WriteLine(Algorithm.MinDistance(test5));
-            //Console.WriteLine(Algorithm.MinDistance(test6));
-            //Console.WriteLine(Algorithm.MinDistance(test7));
-            //Console.WriteLine(Algorithm.MinDistance(test8));
+
         }
     }
 }
