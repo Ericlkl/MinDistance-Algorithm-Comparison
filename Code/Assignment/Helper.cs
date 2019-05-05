@@ -1,8 +1,11 @@
 ﻿using System;
+using System.Linq;
+
 namespace Assignment
 {
     public class Helper
     {
+
         public static T[] ShuffleArray<T>(T[] array)
         {
             Random r = new Random();

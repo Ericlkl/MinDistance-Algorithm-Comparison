@@ -16,7 +16,7 @@ namespace Assignment
             var path = Path.Combine(Path.GetDirectoryName(Assembly.GetEntryAssembly().Location), "BasicOperation.csv");
             var records = new List<CSVRowForOP>();
 
-            for(int i = 0; i <= 20000; i += 1000)
+            for(int i = 0; i <= 15000; i += 1000)
             {
                 Console.WriteLine($"Testing on {i} Elements Size Array....");
 
@@ -25,10 +25,12 @@ namespace Assignment
                 var tempResultList = new List<long>();
                 var tempResultList2 = new List<long>();
 
+                Random rnd = new Random();
+
                 for (int j = 0; j <= TimesOfTest; j++)
                 {
-                    tempResultList.Add(Test.MD1_BasicOperationsTest(i));
-                    tempResultList2.Add(Test.MD2_BasicOperationsTest(i));
+                    tempResultList.Add(Test.MD1_BasicOperationsTest(i,rnd));
+                    tempResultList2.Add(Test.MD2_BasicOperationsTest(i, rnd));
                 }
 
                 long MD1_AVG = tempResultList.Sum(item => item) / TimesOfTest;
@@ -58,7 +60,10 @@ namespace Assignment
             var path = Path.Combine(Path.GetDirectoryName(Assembly.GetEntryAssembly().Location), "AVG_Executiontime.csv");
             var records = new List<CSVRowForTime>();
 
-            for (int i = 0; i <= 20000; i += 1000)
+            Random rand = new Random(Guid.NewGuid().GetHashCode());
+
+            // Testing 
+            for (int i = 0; i <= 15000; i += 1000)
             {
                 Console.WriteLine($"Testing on {i} Elements Size Array....");
 
@@ -69,8 +74,8 @@ namespace Assignment
 
                 for (int j = 0; j <= TimesOfTest; j++)
                 {
-                    tempResultList.Add(Test.MD1_ExecutionTimeTest(i));
-                    tempResultList2.Add(Test.MD2_ExecutionTimeTest(i));
+                    tempResultList.Add(Test.MD1_ExecutionTimeTest(i, rand));
+                    tempResultList2.Add(Test.MD2_ExecutionTimeTest(i, rand));
                 };
 
                 long MD1_AVG = tempResultList.Sum(item => item) / TimesOfTest;
@@ -85,6 +90,7 @@ namespace Assignment
 
             }
 
+            // Writing CSV Files
             Console.WriteLine("Generate AVG Execution Time for Two Algorithm Completed !");
             Console.WriteLine("Generating CSV files....");
             using (var writer = new StreamWriter(path))
