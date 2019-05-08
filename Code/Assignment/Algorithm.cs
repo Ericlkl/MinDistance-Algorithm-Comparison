@@ -13,9 +13,12 @@ namespace Assignment
             {
                 for(int j = 0; j< A.Length; j++)
                 {
-                    if ((i != j) && ( Math.Abs(A[i] - A[j]) < dmin))
+                    if ( i != j)
                     {
-                        dmin = Math.Abs(A[i] - A[j]);
+                        if (Math.Abs(A[i] - A[j]) < dmin)
+                        {
+                            dmin = Math.Abs(A[i] - A[j]);
+                        }
                     }
                 }
             }
@@ -59,7 +62,7 @@ namespace Assignment
                     if (i != j)
                     {
                         basicOperations++;
-                        if (Math.Abs(A[i] - A[j]) < dmin)
+                        if ( (Math.Abs(A[i] - A[j])) < dmin)
                         {
                             basicOperations++;
                             dmin = Math.Abs(A[i] - A[j]);

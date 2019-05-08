@@ -16,7 +16,7 @@ namespace Assignment
             var path = Path.Combine(Path.GetDirectoryName(Assembly.GetEntryAssembly().Location), "BasicOperation.csv");
             var records = new List<CSVRowForOP>();
 
-            for(int i = 0; i <= 15000; i += 1000)
+            for(int i = 0; i <= 10000; i += 1000)
             {
                 Console.WriteLine($"Testing on {i} Elements Size Array....");
 
@@ -25,7 +25,7 @@ namespace Assignment
                 var tempResultList = new List<long>();
                 var tempResultList2 = new List<long>();
 
-                Random rnd = new Random();
+                Random rnd = new Random(Guid.NewGuid().GetHashCode());
 
                 for (int j = 0; j <= TimesOfTest; j++)
                 {
@@ -63,7 +63,7 @@ namespace Assignment
             Random rand = new Random(Guid.NewGuid().GetHashCode());
 
             // Testing 
-            for (int i = 0; i <= 15000; i += 1000)
+            for (int i = 0; i <= 10000; i += 1000)
             {
                 Console.WriteLine($"Testing on {i} Elements Size Array....");
 
