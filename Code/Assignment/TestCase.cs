@@ -7,6 +7,15 @@ namespace Assignment
     public class TestCase
     {
         public int[] inputArray;
+
+        [Test()]
+        public void GeneralCase()
+        {
+            inputArray = new int[] { 1, 5, 9, 52, 46, 10, 13, 22 };
+            Assert.That(Algorithm.MinDistance(inputArray) == 1);
+            Assert.That(Algorithm.MinDistance2(inputArray) == 1);
+        }
+
         [Test()]
         public void Small_To_Big()
         {
@@ -29,6 +38,14 @@ namespace Assignment
             inputArray = new int[] { 1, 65535, 65535, 3, 6, 2, 0, 2, 7 }; ;
             Assert.That(Algorithm.MinDistance(inputArray) == 0);
             Assert.That(Algorithm.MinDistance2(inputArray) == 0);
+        }
+
+        [Test()]
+        public void Dmin_In_Last_Two_Elements()
+        {
+            inputArray = new int[] { 50, 7, 30, 21, 56, 78, 15, 40, 44 };
+            Assert.That(Algorithm.MinDistance(inputArray) == 4);
+            Assert.That(Algorithm.MinDistance2(inputArray) == 4);
         }
 
         [Test()]
