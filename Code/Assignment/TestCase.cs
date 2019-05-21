@@ -59,11 +59,10 @@ namespace Assignment
         [Test()]
         public void RandomPosition()
         {
-            int[] array = { 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61 };
-            inputArray = Helper.ShuffleArray(array);
+            inputArray = new int[] { 26 ,24 ,21 ,30 ,1 ,27 ,11, 20 ,16 ,8 ,14 ,25 ,9 ,14 ,5 ,17 };
 
-            Assert.That(Algorithm.MinDistance(inputArray) == 1);
-            Assert.That(Algorithm.MinDistance2(inputArray) == 1);
+            Assert.That(Algorithm.MinDistance(inputArray) == 0);
+            Assert.That(Algorithm.MinDistance2(inputArray) == 0);
         }
 
         [Test()]
