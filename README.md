@@ -1,2 +1,2 @@
-# CAB301A2_2019S1
-Empirical Comparison of Two Algorithms
+# MinDistance-Algorithm-Comparison
+Empirical Comparison of Two different version of MinDistance Algorithms
